@@ -1,0 +1,20 @@
+{
+  "name": "emotion-mcp-servers",
+  "version": "1.0.0",
+  "description": "MCP servers for emotion playlist project",
+  "scripts": {
+    "start:spotify": "node spotify-mcp-server/build/index.js",
+    "start:brave": "node brave-search-mcp-server/index.js",
+    "start:all": "concurrently \"npm run start:spotify\" \"npm run start:brave\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server-brave-search": "^0.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
