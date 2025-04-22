@@ -63,10 +63,10 @@ python3 orchestrator/tools/spotify_auth.py
 
 ---
 
-## 🖥 Running the Orchestrator
+## 🖥 Installing the MCP Server
 
 ```bash
-python orchestrator/main.py
+mcp install main.py --name EmotionPlaylistMCP   
 ```
 
 ## 🤝 Contributing
