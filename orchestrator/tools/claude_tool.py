@@ -1,6 +1,5 @@
-from mcp.tools import tool
-
-@tool()
+from mcp_instance import mcp
+@mcp.tool()
 def process_emotion(emotion: str) -> str:
     """
     Refine emotion using Claude (simulate for now).

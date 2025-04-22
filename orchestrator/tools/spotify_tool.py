@@ -1,21 +1,28 @@
-from mcp.tools import tool
 import requests
+from mcp_instance import mcp
 
-@tool()
-def create_playlist(refined_emotion: str, search_result: str) -> str:
+@mcp.tool()
+def create_playlist(name: str, description: str = "", public: bool = False) -> str:
     """
-    Call Spotify MCP Server to create a playlist based on emotion + context.
+    Create a new playlist on Spotify.
+    
+    Args:
+        name: The name of the playlist
+        description: Optional description of the playlist
+        public: Whether the playlist should be public (default: False)
     """
-    # Example: forward to Spotify MCP (adjust for actual tool names if needed)
     payload = {
-        "name": f"{refined_emotion} - {search_result[:20]}",
-        "description": f"Auto-generated playlist for {refined_emotion}",
-        "query": refined_emotion
+        "name": name,
+        "description": description,
+        "public": public
     }
-    response = requests.post("http://localhost:3001/tool/createPlaylistWithSearch", json=payload)
+    
+    # The Spotify MCP server runs on port 3001 by default
+    response = requests.post("http://localhost:3001/tool/createPlaylist", json=payload)
 
     if response.ok:
         data = response.json()
-        return data.get("playlistUrl", "No playlist URL returned")
+        # The response will contain the playlist ID in the content text
+        return data.get("content", [{}])[0].get("text", "Playlist created but no ID returned")
     else:
-        return "Failed to create playlist"
+        return f"Failed to create playlist: {response.text}"

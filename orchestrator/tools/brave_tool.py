@@ -1,8 +1,8 @@
-from mcp.tools import tool
+from mcp_instance import mcp
 import os
 import requests
 
-@tool()
+@mcp.tool()
 def search_brave(refined_emotion: str) -> str:
     """
     Query Brave search MCP server with refined emotion.

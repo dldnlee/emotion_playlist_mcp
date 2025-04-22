@@ -4,10 +4,11 @@ from tools.claude_tool import process_emotion
 from tools.brave_tool import search_brave
 from tools.spotify_tool import create_playlist
 from utils.env_loader import load_env
+from mcp_instance import mcp
 
 load_env()  # Make sure all required environment variables are set
 
-mcp = FastMCP("EmotionPlaylistMCP")
+
 
 # Register tools
 mcp.register(get_emotion)

@@ -1,6 +1,6 @@
-from mcp.tools import tool
+from mcp_instance import mcp
 
-@tool()
+@mcp.tool()
 def get_emotion() -> str:
     """
     Simulate or prompt for user's current emotion.
