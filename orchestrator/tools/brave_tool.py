@@ -1,4 +1,4 @@
-from mcp_instance import mcp
+from orchestrator.mcp_instance import mcp
 import os
 import requests
 

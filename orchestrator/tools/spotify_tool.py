@@ -2,7 +2,7 @@ import requests
 import json
 import os
 from typing import List, Dict, Any
-from mcp_instance import mcp
+from orchestrator.mcp_instance import mcp
 from dotenv import load_dotenv
 import base64
 from datetime import datetime, timedelta
