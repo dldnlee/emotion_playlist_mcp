@@ -109,7 +109,7 @@ def main():
         raise Exception("SPOTIFY_CLIENT_ID and SPOTIFY_REDIRECT_URI must be set in .env file")
     
     # Create authorization URL
-    scope = 'playlist-modify-public playlist-modify-private'
+    scope = 'playlist-modify-public playlist-modify-private user-read-playback-state user-modify-playback-state'
     auth_url = (
         'https://accounts.spotify.com/authorize'
         f'?client_id={client_id}'
