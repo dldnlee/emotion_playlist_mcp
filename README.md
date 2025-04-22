@@ -49,6 +49,7 @@ SPOTIFY_REDIRECT_URI=http://127.0.0.1:8888/callback  # Should be identical to Sp
 BRAVE_API_KEY=your_brave_api_key
 ```
 Spotify Tokens can be found in Spotify Developer
+
 Required:
 - Spotify Premium Account
 
